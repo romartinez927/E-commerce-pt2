@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="grilla2">
+        <header>
+            <h1 id="logo">Akira</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <i class="bi bi-house-door verInicio"> Inicio</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./carrito.html">
+                            <i class="bi bi-cart4 verCarrito"> Carrito uwu</i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="carritoHeader">
+                <h2 class="tituloPrincipal">Carrito uwu</h2>
+                <p id="carritoVacio" class="carritoVacio">Tu carrito se encuentra vacío.</p>
+            </div>
+            <div id="contenedorCarrito"></div>
+            <div id="montoTotal"></div>
+
+            <div id="formularioCompra">
+                <!-- <form method="GET" class="form" id="form">  -->
+                    <div id="seccionUno">
+                        <div class="form-header">
+                            <h3>DATOS DE CONTACTO</h1>
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Ingresa tu email para continuar la compra</label>
+                            <input type="text" id="email" class="form-input" placeholder="Email" required>
+                        </div>
+                        <button class="volverCarrito">Volver al carrito</button>
+                        <button class="continuarSeccionDos">Continuar</button>
+                    </div>
+                    <div id="seccionDos">
+                        <div class="acordeon">
+                            <div class="bloque activo">
+                                <input type="radio" id="enviarPedido" class="opcionDeEntrega" name="entregaPedido" value="enviarPedido" checked />
+                                <label for="enviarPedido">Enviar mi pedido</label>
+               
+                                <div class="contenido">
+                                    <h3>DOMICILIO DE ENTREGA</h3>
+                                    <p>Datos de quien recibe</p>
+                                    <input type="text" id="name" class="form-input" placeholder="Nombre">
+                                    <input type="text" id="lastName" class="form-input" placeholder="Apellido">
+                                    <input type="text" id="telefono" class="form-input" placeholder="Teléfono">
+                                    <p>Domicilio de entrega</p>
+                                    <input type="text" id="pais" class="form-input" placeholder="Argentina">
+                                    <select id="localidad" name="localidad">
+                                        <option data="01" value="Buenos Aires">Buenos Aires</option>
+                                        <option data="02" value="Gran Buenos Aires">Gran Buenos Aires</option>
+                                        <option data="03" value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                                        <option data="04" value="Catamarca">Catamarca</option>
+                                        <option data="05" value="Chaco">Chaco</option>
+                                        <option data="06" value="Chubut">Chubut</option>
+                                        <option data="07" value="Córdoba">Córdoba</option>
+                                        <option data="08" value="Corrientes">Corrientes</option>
+                                        <option data="09" value="Entre Ríos">Entre Ríos</option>
+                                        <option data="10" value="Formosa">Formosa</option>
+                                        <option data="11" value="Jujuy">Jujuy</option>
+                                        <option data="12" value="La Pampa">La Pampa</option>
+                                        <option data="13" value="La Rioja">La Rioja</option>
+                                        <option data="14" value="Mendoza">Mendoza</option>
+                                        <option data="15" value="Misiones">Misiones</option>
+                                        <option data="16" value="Neuquén">Neuquén</option>
+                                        <option data="17" value="Río Negro">Río Negro</option>
+                                        <option data="18" value="Salta">Salta</option>
+                                        <option data="19" value="San Juan">San Juan</option>
+                                        <option data="20" value="San Luis">San Luis</option>
+                                        <option data="21" value="Santa Cruz">Santa Cruz</option>
+                                        <option data="22" value="Santa Fé">Santa Fé</option>
+                                        <option data="23" value="Santiago del Estero">Santiago del Estero</option>
+                                        <option data="24" value="Tierra del Fuego">Tierra del Fuego</option>
+                                        <option data="25" value="Tucumán">Tucumán</option>
+                                    </select>
+                                    <input type="text" id="calle" class="form-input" placeholder="Calle">
+                                    <input type="text" id="calleNro" class="form-input" placeholder="n°">
+                                    <input type="text" id="ciudad" class="form-input" placeholder="Ciudad">
+                                    <input type="text" id="codigoPostal" class="form-input" placeholder="Código Postal">    
+                                </div>
+                            </div>
+                            <div class="bloque">
+                                <input type="radio" class="opcionDeEntrega" id="retiroLocal" name="entregaPedido" value="retiroLocal" />
+                                <label for="retiroLocal">Retiro en local</label>
+                                
+                                <div class="contenido">
+                                    <h3>DATOS DE LA PERSONA QUE RETIRARÁ EL PEDIDO</h3>
+                                    <input type="text" id="nombre" class="form-input" placeholder="Nombre">
+                                    <input type="text" id="apellido" class="form-input" placeholder="Apellido">
+                                    
+                                    <h5>Dirección</h5>
+                                    <p>Avenida Siempreviva 123, Capital Federal, Ciudad de Buenos Aires, Argentina</p>
+                                    <p>Una vez que realices tu compra podes pasar a retirar EN EL MOMENTO!</p>
+                                    <p>Los retiros por el local son de Lunes a Viernes de 14 a 20 hs</p>
+                                </div>
+                            </div> 
+                        </div>
+                        <div>
+                            <button class="volverCarrito">Volver al carrito</button>
+                            <button class="continuarSeccionTres">Continuar</button>
+                        </div> 
+                    </div>
+
+                    <!-- Pago -->
+                    <div id="seccionTres">
+                        <div>
+                            <h3>OPCIONES DE PAGO</h3>
+                            <input type="radio" id="efectivo" name="opcionPago" value="efectivo" checked />
+                            <label for="efectivo">En efectivo</label>
+
+                            <input type="radio" id="mercadoPago" name="opcionPago" value="mercadoPago" />
+                            <label for="mercadoPago">MercadoPago</label>
+
+                            <p>Te redireccionaremos al sitio seguro de MercadoPago para que finalices tu compra. Podrás pagar con tarjetas de crédito y en efectivo en puntos de pago.</p>
+                        </div>
+                        <div>
+                            <h4>COMENTARIOS ADICIONALES</h4>
+                            <textarea></textarea>
+                        </div>
+
+                        <button class="volverCarrito">Volver al carrito</button>
+                        <button class="finalizarCompra">Finalizar Compra</button>
+                    </div>
+                    
+                <!-- </form> -->
+            </div> 
+        </main>
+        <footer>
+            <div>
+                <p>© Todos los derechos reservados. 2022.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/carrito.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
