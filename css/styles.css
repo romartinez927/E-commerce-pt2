@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-#grilla {
+/* #grilla {
     display: grid;
     grid-template-areas: 
     "header header"
@@ -120,18 +120,24 @@ nav ul li a {
     margin-bottom: auto;
     cursor: pointer;
     color: whitesmoke;
-}
+} */
 
 .verCarrito{
-    font-size: 1.7em;
-    color: whitesmoke;
-    font-style: normal;
+    font-size: 1.5em;
+    /* color: whitesmoke; */
+    font-style: normal; 
+
 }
 
 .verInicio {
-    font-size: 1.7em;
-    color: whitesmoke;
-    font-style: normal;
+    font-size: 1.5em;
+    /* color: whitesmoke; */
+    font-style: normal; 
+
+}
+
+.navbar-logo {
+    font-size: 1.5em;
 }
 
 .banner {
@@ -221,7 +227,7 @@ nav ul li a {
   }
   
   .acordeon .bloque.activo .contenido {
-    height: 13rem;
+    height: 5rem;
   }
 
  #seccionUno {

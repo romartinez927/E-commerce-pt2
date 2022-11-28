@@ -4,11 +4,14 @@ const montoTotalCompra = document.getElementById("montoTotal")
 const contenedorCarritoVacio = document.getElementById("carritoVacio")
 const formularioCompra = document.querySelector("#formularioCompra")
 const carritoHeader = document.querySelector("#carritoHeader")
-let continuarCompra
 const continuarSeccionDos = document.querySelector(".continuarSeccionDos")
 const continuarSeccionTres = document.querySelector(".continuarSeccionTres")
-const terminarCompra = document.querySelector(".finalizarCompra")
 const seccionTres = document.querySelector(".seccionTres")
+const email = document.getElementById("email")
+
+const volverSeccionUno = document.querySelector(".volverSeccionUno")
+
+
 
 //Función para visualizar los productos que se encuentran en el carrito
 const verCarrito = () => {
@@ -16,8 +19,13 @@ const verCarrito = () => {
     // formularioCompra.innerHTML = ""
     contenedorCarrito.innerHTML = ""
 
+    let continuarCompra = document.createElement("button")
+    continuarCompra.className = "continuarCompra"
+    continuarCompra.innerText = "Continuar Compra"
+
     if (productosEnCarrito && productosEnCarrito.length > 0) {
         
+        continuarCompra.onclick = function(){continuarProcesoCompra()};
         contenedorCarritoVacio.innerText = ""
 
         productosEnCarrito.forEach( (producto) => {
@@ -69,9 +77,7 @@ const verCarrito = () => {
         montoTotalCompra.innerHTML = ""
         continuarCompra.innerHTML = ""
     }
-    continuarCompra = document.createElement("button")
-    continuarCompra.className = "continuarCompra"
-    continuarCompra.innerText = "Continuar Compra"
+    
 
     contenedorCarrito.append(continuarCompra)
 }
@@ -103,30 +109,32 @@ if (productosEnCarrito && productosEnCarrito.length > 0) {
 }
 
 const continuarProcesoCompra = () => {
-    continuarCompra.addEventListener("click", () => {
         contenedorCarrito.style.display="none"
         montoTotalCompra.style.display="none"
         carritoHeader.style.display="none"
         document.getElementById("seccionUno").style.display="block"
-    })
 }
 
-continuarProcesoCompra()
+volverSeccionUno.addEventListener("click", () => {
+    document.getElementById("seccionDos").style.display="none"
+    continuarProcesoCompra()
+})
+
+continuarSeccionDos.onclick = function(){irSeccionDos()};
 
 const irSeccionDos = () => {
-    continuarSeccionDos.addEventListener("click", () => {
-        if (document.getElementById("email").value == "" || null) {
+        if (email.value == "" || email.value.includes("@") === false) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Por favor, ingrese su e-mail',
+                text: 'Por favor, complete sus datos',
               })
         } else {
             document.getElementById("seccionUno").style.display="none"
             document.getElementById("seccionDos").style.display="block"
 
             const bloque = document.querySelectorAll('.bloque')
-            const opcionDeEntrega = document.querySelectorAll('.opcionDeEntrega')
+            const opcionDeEntrega = document.querySelectorAll('.opcionPago')
 
 
             opcionDeEntrega.forEach( ( cadaOpcion , i )=>{
@@ -138,28 +146,23 @@ const irSeccionDos = () => {
                 })
             })
         }
-    })
 }
 
-irSeccionDos()
+
+// continuarSeccionDos.onclick = function(){irSeccionDos()};
+
+continuarSeccionTres.onclick = function(){irSeccionTres()}
 
 const irSeccionTres = () => {
-    continuarSeccionTres.addEventListener("click", () => {
             document.getElementById("seccionDos").style.display="none"
             document.getElementById("seccionTres").style.display="block"
-        
-    })
+            localStorage.clear()
+            Swal.fire('¡Compra realizada con éxito!')
 }
 
-irSeccionTres()
 
-const finalizarCompra = () => {
-    terminarCompra.addEventListener("click", () => {
-        localStorage.clear()
-        Swal.fire('¡Gracias por tu compra!')
-        document.getElementById("seccionTres").style.display="none"
-    })
 
-}
-
-finalizarCompra()
+//ESCUCHO SI SE ENVIA EL FORMULARIO
+document.getElementById('form').addEventListener('submit', function(event){
+    event.preventDefault();
+}, false);
