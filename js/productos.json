@@ -6,7 +6,7 @@
         "stock": 300, 
         "img":"./img/Sintítulo2.png", 
         "cantidad": 1,
-        "categoria": "tops y remeras"
+        "categoria": "remeras"
     },
     {
         "id": 2, 
@@ -15,7 +15,7 @@
         "stock": 350, 
         "img":"./img/Sintítulo.png", 
         "cantidad": 1,
-        "categoria": "tops y remeras"
+        "categoria": "remeras"
     },
     {
         "id": 3, 
@@ -60,7 +60,7 @@
         "stock":100, 
         "img": "./img/1664818248_e18744f3b64d900f33feee8061177287.140307.jpeg", 
         "cantidad": 1,
-        "categoria": "tops y remeras"
+        "categoria": "remeras"
     },
     {
         "id": 8, 
@@ -69,7 +69,7 @@
         "stock": 200, 
         "img": "./img/1589224046_b3f01ead4d639b4a063d39b11e3ba314.140307.jpeg", 
         "cantidad": 1,
-        "categoria": "tops y remeras"
+        "categoria": "remeras"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "stock":200, 
         "img": "./img/1573158303_5b0ab675382bf907b827aad6f74e3024.140307.jpeg", 
         "cantidad": 1,
-        "categoria": "tops y remeras"
+        "categoria": "remeras"
     },   
     {
         "id": 10,

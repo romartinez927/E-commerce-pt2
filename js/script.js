@@ -138,19 +138,36 @@ function cargarProductos(productosElegidos) {
     productosElegidos.forEach((producto) => {
         const {nombre, precio, img, id, cantidad} = producto
 
+        let contCardProductos = document.createElement("div")
+        contCardProductos.className = "col"
+        contCardProductos.style.width = "18em"
+        
+        contenedorProductos.append(contCardProductos)
+        
+        // let cardProductos = document.createElement("div")
+        // cardProductos.className = "col"
+        // cardProductos.style.width="18rem"
+        // cardProductos.innerHTML = `
+        //     <div class="card box">
+        //         <img src=${img} class="card-img-top" alt="...">
+        //         <div class="card-body detail-box">
+        //             <p class="card-nombre">${nombre}</p>
+        //             <p class="card-text price">$${precio}</p>
+        //         </div>
+        //     </div>
+        //     `
+
         let cardProductos = document.createElement("div")
-        cardProductos.className = "col"
-        cardProductos.style.width="18rem"
+        cardProductos.className = "card box"
         cardProductos.innerHTML = `
-            <div class="card box">
                 <img src=${img} class="card-img-top" alt="...">
-                <div class="card-body detail-box">
-                    <p class="card-nombre">${nombre}</p>
-                    <p class="card-text price">$${precio}</p>
-                </div>
-            </div>
-            `
-        contenedorProductos.append(cardProductos)
+                         <div class="card-body detail-box">
+                             <p class="card-nombre">${nombre}</p>
+                             <p class="card-text price">$${precio}</p>
+                         </div>
+        `
+            
+        contCardProductos.append(cardProductos)
 
         let comprar = document.createElement("button")
         comprar.className = "btnComprar btn btn-light"
@@ -220,7 +237,16 @@ categoriaBotones.forEach(boton => {
 
         if (e.currentTarget.id != "todos") {
             const productoCategoria = arrayDeProductosOriginal.find(producto => producto.categoria === e.currentTarget.id)
-            tituloPrincipal.innerText = productoCategoria.categoria;
+            
+            const primeraLetraMayuscula = (cadena) => {
+                const primerCaracter = cadena.charAt(0).toUpperCase();
+                const restoDeLaCadena = cadena.substring(1, cadena.length);
+                return primerCaracter.concat(restoDeLaCadena);
+              }
+
+            let rdo = primeraLetraMayuscula(productoCategoria.categoria)
+
+            tituloPrincipal.innerText = rdo;
             const productosBoton = arrayDeProductosOriginal.filter(producto => producto.categoria === e.currentTarget.id)
             cargarProductos(productosBoton)
         } else {
