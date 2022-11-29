@@ -20,7 +20,7 @@ const verCarrito = () => {
     contenedorCarrito.innerHTML = ""
 
     let continuarCompra = document.createElement("button")
-    continuarCompra.className = "continuarCompra"
+    continuarCompra.className = "continuarCompra btn btn-light"
     continuarCompra.innerText = "Continuar Compra"
 
     if (productosEnCarrito && productosEnCarrito.length > 0) {
@@ -30,19 +30,47 @@ const verCarrito = () => {
 
         productosEnCarrito.forEach( (producto) => {
             let contenidoDelCarrito = document.createElement("div")
-            contenidoDelCarrito.className = "contenidoDelCarrito col justify-content-center text-center"
-            contenidoDelCarrito.style.width = "18em"
+            contenidoDelCarrito.className = "contenidoDelCarrito col-10 p-3"
             contenidoDelCarrito.innerHTML = `
-                <div class="card">
-                    <img src="${producto.img}">
-                    <h4>${producto.nombre}</h3>
-                    <p>$ ${producto.precio}</p>
-                    <span class="restar"> - </span>
-                    <p>Cantidad: ${producto.cantidad}</p> 
-                    <span class="sumar"> + </span>
-                    <p>Total: $${producto.cantidad * producto.precio}</p>
-                    <span class="eliminarProducto"> (x) </span>
-                </div>`
+                <div class="row align-items-center">
+                    <div class="col" >
+                        <img src="${producto.img}" class="carrito-img">
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-titulo">
+                            <small>Título</small>
+                            <h5>${producto.nombre}</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-cantidad">
+                            <small>Cantidad</small>
+                            <div class="d-flex justify-content-center">
+                                <i class="fa-solid fa-plus sumar p-1"></i>
+                                <p class="px-2">${producto.cantidad}</p>
+                                <i class="fa-solid fa-minus restar p-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-precio">
+                            <small>Precio</small>
+                            <p>$${producto.precio}</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>$${producto.precio * producto.cantidad}</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <i class="fa-solid fa-circle-xmark eliminarProducto"></i>
+                    </div>
+                </div>
+            `
+
+
             
             contenedorCarrito.append(contenidoDelCarrito)
         
@@ -104,7 +132,7 @@ if (productosEnCarrito && productosEnCarrito.length > 0) {
 
     const totalCompra = document.createElement("div")
     totalCompra.className = "total-content"
-    totalCompra.innerHTML = `Total a pagar: $ ${total}`
+    totalCompra.innerHTML = `Total: $ ${total}`
     montoTotalCompra.append(totalCompra)
 } else {
     montoTotalCompra.innerHTML = ""

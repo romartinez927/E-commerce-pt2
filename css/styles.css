@@ -8,6 +8,32 @@ a {
     text-decoration: none;
 }
 
+.carrito-img {
+    width: 10rem;
+    border-radius: 0.4rem;
+}
+
+.eliminarProducto {
+    cursor: pointer;
+}
+
+.restar {
+    cursor: pointer
+}
+
+.sumar {
+    cursor: pointer
+}
+
+.continuarCompra {
+    margin-top: 2em;
+    width: 17em;
+    height: 2.3em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+}
+
 .box {
     transition: all ease 0.3s
 }
