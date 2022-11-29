@@ -1,137 +1,117 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Roboto Slab', serif;
 }
 
-/* #grilla {
-    display: grid;
-    grid-template-areas: 
-    "header header"
-    "main main"
-    "footer footer";
-    grid-template-columns: auto auto;
-    grid-template-rows: 4em 1fr 3em;
-    height: 100vh;
-}
-
-#grilla2 {
-    display: grid;
-    grid-template-areas: 
-    "header header"
-    "main main"
-    "footer footer";
-    grid-template-columns: auto auto;
-    grid-template-rows: 4em 1fr 3em;
-    height: 100vh;
-}
-
-main {
-    grid-area: main;
-    background-color: whitesmoke;
-    justify-items: center;
-    display: grid;
-}
-
-.tituloPrincipal {
-    text-align: center;
-    padding-top: 2rem;
-    font-size: 2em;
-}
-
-#contenedorCardsProductos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    padding-top: 2rem;
-}
-
-#resultado {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    padding-top: 2rem;
-}
-
-.card {
-    text-align: center;
-    padding: 0.5rem;
-    transition: all ease 0.6s;
-}
-
-.card:hover {
-    opacity: 0.85;
-
-}
-
-.card img{
-    max-width: 20em;
-}
-
-header {
-    grid-area: header;
-    display: grid;
-    grid-template-areas: "logo nav";
-    grid-template-columns: 10em auto;
-    grid-template-rows: 100%;
-    background-color: lightskyblue;
-    position: fixed;
-    width: 100%;
-    z-index: 3;
-}
-
-footer {
-    grid-area: footer;
-    background-color: lightskyblue;
-    text-align: center;
-    font-size: 1.5em;
-}
-
-nav {
-    grid-area: nav;
-    margin-bottom: auto;
-    margin-top: auto;
-    text-align: right;
-    justify-content: end;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-}
-
-nav ul li {
-    list-style: none;
-    padding: 1em;
-}
-
-nav ul li a {
+a {
     text-decoration: none;
+}
+
+.box {
+    width: 300px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
 
 }
 
-#logo {
-    grid-area: logo;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    cursor: pointer;
-    color: whitesmoke;
-} */
+.slide-img {
+    height: 450px;
+    position: relative;
+}
 
-.verCarrito{
+.slide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.detail-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.card-nombre {
+    color: #222222;
+    margin: 5px 0px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding-right: 8px;
+}
+
+.price {
+    color: #333333;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.overlay {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 95, 236, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-btn {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #252525;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    visibility: hidden;
+}
+
+.slide-img:hover .overlay {
+    visibility: visible;
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.buy-btn:hover {
+    color: #ffffff;
+    background-color: #f15fa3;
+    transition: all ease 0.3s;
+}
+
+.verCarrito {
     font-size: 1.5em;
-    /* color: whitesmoke; */
-    font-style: normal; 
+    font-style: normal;
 
 }
 
 .verInicio {
     font-size: 1.5em;
-    /* color: whitesmoke; */
     font-style: normal; 
 
 }
@@ -140,13 +120,15 @@ nav ul li a {
     font-size: 1.5em;
 }
 
+
 .banner {
-    background-size: cover;
+    align-content: center;
+    justify-content: center;
+    margin-top: 3em;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/Banner\ web\ horizontal\ SALE\ indumentaria\ con\ fotografía\ llamativo\ amarillo\ y\ negro\ \(1\).png);
     background-position: center;
-    width: 100%;
-    max-height: 37em;
-    margin-top: -1em;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/Banner\ web\ horizontal\ SALE\ indumentaria\ con\ fotografía\ llamativo\ amarillo\ y\ negro\ \(1\).png)
+    background-attachment: fixed;
+    height: 100vh
 }
 
 .bannerContainer {

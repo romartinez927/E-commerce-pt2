@@ -10,7 +10,7 @@
     },
     {
         "id": 2, 
-        "nombre": "Remera clásica de Modal", 
+        "nombre": "Remera clásica", 
         "precio": 1200, 
         "stock": 350, 
         "img":"./img/Sintítulo.png", 
@@ -91,7 +91,7 @@
     },
     {
         "id": 11,
-        "nombre": "Biker de algodón con lycra",
+        "nombre": "Biker de algodón",
         "precio": 1500, 
         "stock": 200, 
         "img": "./img/080ba20369f48bf7fd8a368f506a44caa7e6e31829f9317d57953dc5fc33073f95838.jpeg", 
@@ -100,7 +100,7 @@
     },
     {
         "id": 12,
-        "nombre": "Jogging algodón rústico",
+        "nombre": "Jogging rústico",
         "precio": 2300, 
         "stock": 200, 
         "img": "./img/fcd08eee38bf22369b022f6117e9c8309e0636e87d5395afb34866b27089080695838.jpeg", 

@@ -139,16 +139,21 @@ function cargarProductos(productosElegidos) {
         const {nombre, precio, img, id, cantidad} = producto
 
         let cardProductos = document.createElement("div")
-        cardProductos.className = "card"
+        cardProductos.className = "col"
+        cardProductos.style.width="18rem"
         cardProductos.innerHTML = `
-            <img src=${img}>
-            <h2>${nombre}</h2>
-            <p>$${precio}</p>
-        `
+            <div class="card box">
+                <img src=${img} class="card-img-top" alt="...">
+                <div class="card-body detail-box">
+                    <p class="card-nombre">${nombre}</p>
+                    <p class="card-text price">$${precio}</p>
+                </div>
+            </div>
+            `
         contenedorProductos.append(cardProductos)
 
         let comprar = document.createElement("button")
-        comprar.className = "btnComprar"
+        comprar.className = "btnComprar btn btn-light"
         comprar.innerText = "Comprar"
 
         cardProductos.append(comprar)
@@ -185,13 +190,18 @@ const filtrar = () => {
         const {nombre, precio, img} = producto
         let name = nombre.toLowerCase()
         if (name.indexOf(texto) !== -1) {
-            tituloPrincipal.innerText = `Resultados de "${buscador.value}"`
-            resultado.innerHTML += `<div class="card">
-                                    <img src=${img}>
-                                    <h2>${nombre}</h2>
-                                    <p>$${precio}</p>
-                                    <button class="btnComprar">Comprar</button>
-                                    </div>`
+            // tituloPrincipal.innerText = `Resultados de "${buscador.value}"`
+            resultado.innerHTML += `
+                        <div class="col pt-3" style="width: 18rem;">
+                            <div class="card">
+                                <img src=${img} class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p>${nombre}</p>
+                                    <p class="card-text">$${precio}</p>
+                                    <button class="btnComprar btn btn-light">Comprar</button>
+                                </div>
+                            </div>
+                        </div>`
             contenedorProductos.innerHTML = ""
         } 
     }

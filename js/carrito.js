@@ -30,17 +30,19 @@ const verCarrito = () => {
 
         productosEnCarrito.forEach( (producto) => {
             let contenidoDelCarrito = document.createElement("div")
-            contenidoDelCarrito.className = "contenidoDelCarrito"
+            contenidoDelCarrito.className = "contenidoDelCarrito col justify-content-center text-center"
+            contenidoDelCarrito.style.width = "18em"
             contenidoDelCarrito.innerHTML = `
-                <img src="${producto.img}">
-                <h3>${producto.nombre}</h3>
-                <p>$ ${producto.precio}</p>
-                <span class="restar"> - </span>
-                <p>Cantidad: ${producto.cantidad}</p> 
-                <span class="sumar"> + </span>
-                <p>Total: $${producto.cantidad * producto.precio}</p>
-                <span class="eliminarProducto"> (x) </span>
-                `
+                <div class="card">
+                    <img src="${producto.img}">
+                    <h4>${producto.nombre}</h3>
+                    <p>$ ${producto.precio}</p>
+                    <span class="restar"> - </span>
+                    <p>Cantidad: ${producto.cantidad}</p> 
+                    <span class="sumar"> + </span>
+                    <p>Total: $${producto.cantidad * producto.precio}</p>
+                    <span class="eliminarProducto"> (x) </span>
+                </div>`
             
             contenedorCarrito.append(contenidoDelCarrito)
         
