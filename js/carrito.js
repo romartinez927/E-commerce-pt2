@@ -146,10 +146,43 @@ const continuarProcesoCompra = () => {
         document.getElementById("pasos").style.display="block"
         document.getElementById("seccionUno").style.display="block"
         document.getElementById("colCarrito").classList.add('col-md-4')
+        document.getElementById("colCarrito").classList.add('pt-5')
         document.getElementById("colCarrito").classList.remove('col-12')
         document.querySelector(".continuarCompra").style.display="none"
         document.querySelector(".tituloPrincipal").style.display="none"
-       
+        document.querySelector(".contenidoDelCarrito").style.display="none"
+        
+        contenedorCarrito.innerHTML = ""
+
+        productosEnCarrito.forEach( (producto) => {
+            let contenidoDelCarritoDos = document.createElement("div")
+            contenidoDelCarritoDos.className = "contenidoDelCarritoDos col-12 p-3"
+            contenidoDelCarritoDos.innerHTML = `
+                <div class="row align-items-center">
+                    <div class="col" >
+                        <img src="${producto.img}" class="carrito-img-dos">
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-titulo">
+                            <h5>${producto.nombre}</h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-cantidad">
+                                <p>${producto.cantidad}</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>$${producto.precio * producto.cantidad}</p>
+                        </div>
+                    </div>
+                </div>
+            `
+            contenedorCarrito.append(contenidoDelCarritoDos)
+        })
+            
 }
 
 volverSeccionUno.addEventListener("click", () => {
