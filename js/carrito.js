@@ -12,7 +12,6 @@ const email = document.getElementById("email")
 const volverSeccionUno = document.querySelector(".volverSeccionUno")
 
 
-
 //Función para visualizar los productos que se encuentran en el carrito
 const verCarrito = () => {
 
@@ -25,12 +24,13 @@ const verCarrito = () => {
 
     if (productosEnCarrito && productosEnCarrito.length > 0) {
         
+        contenedorCarrito.style.visibility="visible"
         continuarCompra.onclick = function(){continuarProcesoCompra()};
-        contenedorCarritoVacio.innerText = ""
+        contenedorCarritoVacio.style.display="none"
 
         productosEnCarrito.forEach( (producto) => {
             let contenidoDelCarrito = document.createElement("div")
-            contenidoDelCarrito.className = "contenidoDelCarrito col-10 p-3"
+            contenidoDelCarrito.className = "contenidoDelCarrito col-12 p-3"
             contenidoDelCarrito.innerHTML = `
                 <div class="row align-items-center">
                     <div class="col" >
@@ -105,7 +105,10 @@ const verCarrito = () => {
     } else {
         contenedorCarritoVacio.innerText = "Tu carrito se encuentra vacío."
         montoTotalCompra.innerHTML = ""
-        continuarCompra.innerHTML = ""
+        continuarCompra.style.display="none"
+        document.getElementById("pasos").style.display="none"
+        document.getElementById("seccionUno").style.display="none"
+
     }
     
 
@@ -138,11 +141,15 @@ if (productosEnCarrito && productosEnCarrito.length > 0) {
     montoTotalCompra.innerHTML = ""
 }
 
+
 const continuarProcesoCompra = () => {
-        contenedorCarrito.style.display="none"
-        montoTotalCompra.style.display="none"
-        carritoHeader.style.display="none"
+        document.getElementById("pasos").style.display="block"
         document.getElementById("seccionUno").style.display="block"
+        document.getElementById("colCarrito").classList.add('col-md-4')
+        document.getElementById("colCarrito").classList.remove('col-12')
+        document.querySelector(".continuarCompra").style.display="none"
+        document.querySelector(".tituloPrincipal").style.display="none"
+       
 }
 
 volverSeccionUno.addEventListener("click", () => {
@@ -153,15 +160,12 @@ volverSeccionUno.addEventListener("click", () => {
 continuarSeccionDos.onclick = function(){irSeccionDos()};
 
 const irSeccionDos = () => {
-        if (email.value == "" || email.value.includes("@") === false) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Por favor, complete sus datos',
-              })
-        } else {
+
             document.getElementById("seccionUno").style.display="none"
             document.getElementById("seccionDos").style.display="block"
+
+            document.querySelector(".pasos-tusDetalles").classList.add('disabled')
+            document.querySelector(".pasos-pago").classList.remove('disabled')
 
             const bloque = document.querySelectorAll('.bloque')
             const opcionDeEntrega = document.querySelectorAll('.opcionPago')
@@ -175,7 +179,6 @@ const irSeccionDos = () => {
                     bloque[i].classList.add('activo')
                 })
             })
-        }
 }
 
 
@@ -186,6 +189,10 @@ continuarSeccionTres.onclick = function(){irSeccionTres()}
 const irSeccionTres = () => {
             document.getElementById("seccionDos").style.display="none"
             document.getElementById("seccionTres").style.display="block"
+
+            document.querySelector(".pasos-pago").classList.add('disabled')
+            document.querySelector(".pasos-confirmacion").classList.remove('disabled')
+
             localStorage.clear()
             Swal.fire('¡Compra realizada con éxito!')
 }
@@ -196,3 +203,5 @@ const irSeccionTres = () => {
 document.getElementById('form').addEventListener('submit', function(event){
     event.preventDefault();
 }, false);
+
+
