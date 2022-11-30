@@ -160,7 +160,13 @@ volverSeccionUno.addEventListener("click", () => {
 continuarSeccionDos.onclick = function(){irSeccionDos()};
 
 const irSeccionDos = () => {
-
+        if(email.value == "") {
+            Swal.fire({
+                icon: 'error',
+       
+                text: 'Por favor, complete los campos',
+              })
+        } else {
             document.getElementById("seccionUno").style.display="none"
             document.getElementById("seccionDos").style.display="block"
 
@@ -179,6 +185,7 @@ const irSeccionDos = () => {
                     bloque[i].classList.add('activo')
                 })
             })
+        }
 }
 
 
@@ -199,9 +206,29 @@ const irSeccionTres = () => {
 
 
 
-//ESCUCHO SI SE ENVIA EL FORMULARIO
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+
+  //ESCUCHO SI SE ENVIA EL FORMULARIO
 document.getElementById('form').addEventListener('submit', function(event){
     event.preventDefault();
 }, false);
-
-
