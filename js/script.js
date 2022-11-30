@@ -84,7 +84,6 @@ const filtrar = () => {
         const {nombre, precio, img} = producto
         let name = nombre.toLowerCase()
         if (name.indexOf(texto) !== -1) {
-            // tituloPrincipal.innerText = `Resultados de "${buscador.value}"`
             resultado.innerHTML += `
                         <div class="col pt-3" style="width: 18rem;">
                             <div class="card">
@@ -135,13 +134,27 @@ categoriaBotones.forEach(boton => {
 })
 
 // Contador de productos en carrito
+// const carritoCounter = () => {
+//     const carritoLenght = carrito.length
+//     localStorage.setItem("numeritoCarrito", JSON.stringify(carritoLenght))
+
+//     cantidadCarrito.innerText = JSON.parse(localStorage.getItem("numeritoCarrito"))
+// }
+
+// carritoCounter()
+
 const carritoCounter = () => {
-    const carritoLenght = carrito.length
-    localStorage.setItem("numeritoCarrito", JSON.stringify(carritoLenght))
+    if(carrito && carrito.length > 0) {
+        const numeroCarrito = carrito.reduce ((acc, el) => 
+            acc + el.cantidad, 0)
+        
+        console.log(numeroCarrito)
 
-    cantidadCarrito.innerText = JSON.parse(localStorage.getItem("numeritoCarrito"))
+        localStorage.setItem("numeritoCarrito", JSON.stringify(numeroCarrito))
+
+        cantidadCarrito.innerText = JSON.parse(localStorage.getItem("numeritoCarrito"))
+    }
 }
-
 carritoCounter()
 
 // Guardar datos en Local Storage
