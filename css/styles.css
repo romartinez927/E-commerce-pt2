@@ -311,14 +311,14 @@ body {
     height: 100vh;
 }
 
-footer {
-    background-color: #f8f9fa;
-    flex-shrink: 0;
-}
+
 
 .main-carrito {
     margin-top: 5.5em;
-    /*width: 100%;
-    height: 100vh; */
-    flex: 1 0 auto;
+    min-height: calc(100vh - 70px);
+}
+
+footer {
+    background-color: #f8f9fa;
+    height: 50px;
 }
