@@ -37,10 +37,10 @@ a {
     align-content: center;
     justify-content: center;
     margin-top: 3em;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/Banner\ web\ horizontal\ SALE\ indumentaria\ con\ fotografía\ llamativo\ amarillo\ y\ negro\ \(1\).png);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./../img/e5f2af0748c60c71401de63162a6defe.jpg);
     background-position: center;
     background-attachment: fixed;
-    height: 100vh
+    height: 100vh;
 }
 
 .bannerContainer {
