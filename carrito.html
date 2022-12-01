@@ -126,7 +126,11 @@
                                 </div>
                                 <div class="acordeon">
                                     <div class="bloque activo">
-                                        <input type="radio" id="tarjeta" class="opcionPago" name="opcionPago" value="tarjeta" checked />
+                                        <input type="radio" class="opcionPago" id="efectivo" name="opcionPago" value="efectivo" checked/>
+                                        <label for="efectivo">Efectivo En la Tienda</label>
+                                    </div>
+                                    <div class="bloque">
+                                        <input type="radio" id="tarjeta" class="opcionPago" name="opcionPago" value="tarjeta" />
                                         <label for="tarjeta">Tarjeta</label>
                         
                                         <div class="contenido row">
@@ -158,10 +162,7 @@
                                             <p>Te redireccionaremos al sitio seguro de MercadoPago para que finalices tu compra. Podrás pagar con tarjetas de crédito y en efectivo en puntos de pago.</p>
                                         </div>
                                     </div> 
-                                    <div class="bloque">
-                                        <input type="radio" class="opcionPago" id="efectivo" name="opcionPago" value="efectivo" />
-                                        <label for="efectivo">Efectivo En la Tienda</label>
-                                    </div>
+                                    
 
                                 </div>
                                 <div class="row justify-content-evenly">
@@ -170,7 +171,7 @@
                                 </div>
                             </div>
 
-                            <div id="seccionTres" class="col">
+                            <div id="seccionTres" class="col pt-5">
                                 <div class="row">
                                     <h2 class="fw-bold text-center">Confirmación</h2>
                                     <p>¡Muchas gracias!</p>

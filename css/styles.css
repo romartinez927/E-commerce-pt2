@@ -279,9 +279,6 @@ footer {
 }
 
 
-.card {
-    border-style: none;
-}
 
 .card:hover .btnComprar {
     transition: all ease 0.3s;
@@ -292,7 +289,6 @@ footer {
 .btnComprar:hover {
     transition: all ease 0.3s;
 }
-
 
 .detail-box {
     width: 100%;

@@ -6,11 +6,10 @@ const contenedorCategoriasProductos = document.querySelector("#contenedorCategor
 const categoriaBotones = document.querySelectorAll(".categoriaBtn")
 const tituloPrincipal = document.querySelector(".tituloPrincipal")
 
-
 fetch("js/productos.json")
     .then(response => response.json())
     .then(productos => funcionContenedoraCodigo(productos))
-
+    .catch(error())
 
 function funcionContenedoraCodigo(productosRopa) {
 
@@ -119,6 +118,14 @@ function funcionContenedoraCodigo(productosRopa) {
         localStorage.setItem("productosCarrito", JSON.stringify(carrito))
     }
 
+}
 
+function error() {
+    let loading = document.createElement("div")
+    loading.className = "spinner-grow d-flex justify-content-center"
+    loading.role = "status"
+    loading.innerHTML = `<span class="visually-hidden">Loading...</span>`
+
+    contenedorProductos.append(loading)
 }
 
