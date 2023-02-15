@@ -32,7 +32,7 @@
 
 ## Overview
 
-![screenshot]("https://imgur.com/a/YtfNvYs")
+![screenshot](https://i.postimg.cc/DZRCg0qg/2023-02-14-40.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
