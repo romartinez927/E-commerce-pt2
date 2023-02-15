@@ -9,11 +9,11 @@
 <div align="center">
   <h3>
     <a href="https://romartinez927.github.io/ProyectoFinal-Martinez/">
-      Demo
+      Página Web
     </a>
     <span> | </span>
     <a href="https://github.com/romartinez927/ProyectoFinal-Martinez.git">
-      Solution
+      Repo
     </a>
   </h3>
 </div>
@@ -24,7 +24,6 @@
 
 - [Overview](#overview)
 - [Built With](#built-with)
-- [Features](#features)
 - [How to use](#how-to-use)
 - [Contact](#contact)
 
@@ -47,6 +46,17 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 - HTML, CSS, JavaScript
 - [Bootstrap](https://getbootstrap.com)
 
+
+## How To Use
+
+<!-- Example: -->
+
+To clone and run this application, you'll need [Git](https://git-scm.com) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/your-user-name/your-project-name
+```
 
 ## Contact
 
